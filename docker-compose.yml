@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres_db_alcaldia
+    restart: always
+    environment:
+      POSTGRES_DB: db_crud
+      POSTGRES_USER: user_crud
+      POSTGRES_PASSWORD: root
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5433:5432"
