@@ -32,7 +32,7 @@ import { AuthModule } from './auth/auth.module';
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
         type: 'postgres',
-        host: 'localhost',
+        host: '192.168.70.65',
         port: 5433,
         username: 'user_crud',
         password: 'root',
